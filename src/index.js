@@ -10,7 +10,7 @@ const store = createStore(cats_reducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedApp />
+    <WrapperApp />
   </Provider>,
     document.getElementById('root')
 );
