@@ -32,7 +32,6 @@ function setup() {
 function setUpMount() {
   // const middlewares = [ thunk ]
   // // const mockStore = configureMockStore(rootReducer, compose(applyMiddleware(middlewares)))({cats: {loading: false, pictures: []}})
-
   console.log('before mount in test here')
   const component = mount(<App catPics={[]}/>)
   return {component}
@@ -54,7 +53,7 @@ describe('<App/>', function () {
   it('should use the componentDidMount lifecycle method to fetchCats', function() {
     // sinon.spy(App.prototype, 'componentDidMount');
     sinon.stub(App.prototype, 'componentDidMount');
-    const {component } = setUpMount()
+    const { component } = setUpMount()
     expect(App.prototype.componentDidMount.calledOnce).toEqual(true);
   })
 });
